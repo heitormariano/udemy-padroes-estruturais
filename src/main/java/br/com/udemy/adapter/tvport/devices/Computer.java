@@ -7,7 +7,6 @@ public class Computer {
 	private HDMI port;
 
 	public void connectPort(HDMI screen) {
-
 		System.out.println("Connecting on HDMI port");
 		this.port = screen;
 	}

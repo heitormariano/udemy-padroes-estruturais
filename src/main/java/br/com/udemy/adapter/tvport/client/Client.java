@@ -10,7 +10,7 @@ public class Client {
 
 	public static void main(String[] args) {
 
-		System.out.println("------- Computer and TV -----------");
+		System.out.println("------------------ Computer and TV --------------");
 		Computer pc = new Computer();
 		TV tv = new TV();
 
@@ -19,7 +19,8 @@ public class Client {
 
 		System.out.println();
 
-		System.out.println("----------- Old Monitor ------------");
+		System.out.println("------------------ Old Monitor ------------------");
+		System.out.println("----------- Approuch: Object Adapter ------------");
 		Computer pc2 = new Computer();
 		OldMonitor oldMonitor = new OldMonitor();
 
@@ -28,7 +29,8 @@ public class Client {
 
 		System.out.println();
 
-		System.out.println("------- Monitor Class Adapter ------");
+		System.out.println("----------------- Old Monitor ------------------");
+		System.out.println("----------- Approuch: Class Adapter ------------");
 		Computer pc3 = new Computer();
 		pc3.connectPort(new HDMIToOldMonitorAdapter());
 		pc3.sendImageAndSound("Person talking", "bla, bla, bla");
