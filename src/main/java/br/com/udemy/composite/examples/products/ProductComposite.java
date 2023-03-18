@@ -3,9 +3,12 @@ package br.com.udemy.composite.examples.products;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.udemy.composite.examples.util.OperationsUtil;
+
 public class ProductComposite extends ProductComponent {
 
 	private List<ProductComponent> children = new ArrayList<>();
+	private OperationsUtil operationsUtil = new OperationsUtil();
 
 	public ProductComposite() {
 
@@ -21,7 +24,7 @@ public class ProductComposite extends ProductComponent {
 		for (ProductComponent prod : this.children) {
 			soma += prod.getPrice();
 		}
-		return soma;
+		return operationsUtil.roundValue(soma);
 	}
 
 	public void add(ProductComponent product) {
@@ -34,16 +37,19 @@ public class ProductComposite extends ProductComponent {
 			return true;
 		}
 		return false;
-
-		// outra abordagem
-//		int indexElem = this.children.indexOf(product);
-//		if (indexElem != -1) {
-//			this.children.remove(indexElem);
-//			return true;
-//		}
-//		return false;
-
 	}
+
+	// outra abordagem
+
+	/*
+	public boolean removeVersionTwo(ProductComponent product) {
+		int indexElem = this.children.indexOf(product);
+		if (indexElem != -1) {
+			this.children.remove(indexElem);
+			return true;
+		}
+		return false;
+	} */
 
 	@Override
 	public String toString() {

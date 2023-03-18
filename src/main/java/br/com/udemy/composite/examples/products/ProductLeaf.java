@@ -1,6 +1,9 @@
 package br.com.udemy.composite.examples.products;
 
+import br.com.udemy.composite.examples.util.OperationsUtil;
+
 public class ProductLeaf extends ProductComponent {
+	private OperationsUtil operationsUtil = new OperationsUtil();
 
 	public ProductLeaf(String name, double price) {
 		this.name = name;
@@ -9,12 +12,12 @@ public class ProductLeaf extends ProductComponent {
 
 	@Override
 	public double getPrice() {
-		return this.price;
+		return operationsUtil.roundValue(price);
 	}
 
 	@Override
 	public String toString() {
-		return "ProductLeaf [name=" + name + ", price=" + price + "]";
+		return "ProductLeaf [name=" + getName() + ", price=" + getPrice() + "]";
 	}
 
 }
